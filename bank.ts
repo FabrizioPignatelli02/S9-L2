@@ -40,7 +40,6 @@ window.addEventListener("load", () =>{
         
         
     }else if(id === "son"){
-        console.log("Ciao Piccolo")
         let sonAccount:any = new Cliente("Giorgio", "Canto", "16")
         completeBanking(sonAccount)
     }

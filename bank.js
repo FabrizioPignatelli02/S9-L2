@@ -30,7 +30,6 @@ window.addEventListener("load", function () {
         completeBanking(momAccount);
     }
     else if (id === "son") {
-        console.log("Ciao Piccolo");
         var sonAccount = new Cliente("Giorgio", "Canto", "16");
         completeBanking(sonAccount);
     }
