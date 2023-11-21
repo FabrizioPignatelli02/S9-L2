@@ -2,7 +2,7 @@ class Cliente {
     name: string;
     surname: string;
     age: string;
-    balanceInit: number = 0
+    balanceInit: number = 0;
     constructor(_name: string, _surname: string, _age: string,){
         this.name = _name;
         this.surname = _surname;
@@ -70,6 +70,9 @@ function completeBanking (person){
     function deposit () {
         const importo:number = parseInt(inputDeposit?.value)
         const ritorno = person.oneDeposit(importo)
+        const tr = document.createElement("tr") as HTMLTableRowElement | null
+        tr!.innerText = "Deposito: " + "+" + importo
+        table?.appendChild(tr)
         balanceSubtitle!.innerText = "Saldo disponibile: "+ ritorno + "€"
         inputDeposit!.value = ""
     }
@@ -85,9 +88,16 @@ function completeBanking (person){
     function prel () {
         const importo:number = parseInt(inputPrel?.value)
         const ritorno = person.oneWithDray(importo)
+        const tr = document.createElement("tr") as HTMLTableRowElement | null
+        tr!.innerText = "Prelievo: " + "-" + importo
+        table?.appendChild(tr)
         balanceSubtitle!.innerText = "Saldo disponibile: "+ ritorno + "€"
         inputPrel!.value = ""
     }
+
+    const table = document.createElement("table") as HTMLTableCaptionElement | null
+
+
 
 
 
@@ -95,6 +105,7 @@ function completeBanking (person){
     document.body.appendChild(buttonDeposit)
     document.body.appendChild(inputPrel)
     document.body.appendChild(buttonPrel)
+    document.body.appendChild(table)
 
 }
 

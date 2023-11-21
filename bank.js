@@ -54,6 +54,9 @@ function completeBanking(person) {
     function deposit() {
         var importo = parseInt(inputDeposit === null || inputDeposit === void 0 ? void 0 : inputDeposit.value);
         var ritorno = person.oneDeposit(importo);
+        var tr = document.createElement("tr");
+        tr.innerText = "Deposito: " + "+" + importo;
+        table === null || table === void 0 ? void 0 : table.appendChild(tr);
         balanceSubtitle.innerText = "Saldo disponibile: " + ritorno + "€";
         inputDeposit.value = "";
     }
@@ -66,11 +69,16 @@ function completeBanking(person) {
     function prel() {
         var importo = parseInt(inputPrel === null || inputPrel === void 0 ? void 0 : inputPrel.value);
         var ritorno = person.oneWithDray(importo);
+        var tr = document.createElement("tr");
+        tr.innerText = "Prelievo: " + "-" + importo;
+        table === null || table === void 0 ? void 0 : table.appendChild(tr);
         balanceSubtitle.innerText = "Saldo disponibile: " + ritorno + "€";
         inputPrel.value = "";
     }
+    var table = document.createElement("table");
     document.body.appendChild(inputDeposit);
     document.body.appendChild(buttonDeposit);
     document.body.appendChild(inputPrel);
     document.body.appendChild(buttonPrel);
+    document.body.appendChild(table);
 }

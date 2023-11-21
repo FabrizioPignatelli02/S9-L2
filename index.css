@@ -27,3 +27,8 @@ body{
 @keyframes zoom{
     to{transform: scale(1.2);}
 }
+
+table{
+    margin-inline: auto;
+    margin-top: 50px;
+}
